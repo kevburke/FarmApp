@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/scanner-master.iml" filepath="$PROJECT_DIR$/scanner-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FarmApp.iml" filepath="$PROJECT_DIR$/FarmApp.iml" />
     </modules>
   </component>
 </project>

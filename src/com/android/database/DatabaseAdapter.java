@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 /**
  * Adapts the database to deal with the front end.
  * 
- * @author Andrei
+ *
  *
  */
 public class DatabaseAdapter {

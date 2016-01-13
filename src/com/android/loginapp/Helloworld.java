@@ -13,8 +13,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /***
- * Simple Hello World landing. 
- * @author Andrei
+ * Main layout page .
+ *
  *
  */
 public class Helloworld extends Activity {

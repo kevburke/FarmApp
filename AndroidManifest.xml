@@ -10,7 +10,9 @@
     <uses-sdk
             android:minSdkVersion="8"
             android:targetSdkVersion="21"/>
-    <application android:icon="@drawable/icon" android:label="@string/app_name2" android:allowBackup="true"
+    <application android:icon="@drawable/icon"
+                 android:label="@string/app_name2"
+                 android:allowBackup="true"
                  android:theme="@style/AppTheme">
         <activity android:name="com.android.loginapp.login"
                   android:label="Farm Buddy">
