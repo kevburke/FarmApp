@@ -7,7 +7,7 @@ import android.util.Log;
 /**
  * This class creates the relation with the SQLite Database Helper
  * through which queries can be SQL called. 		
- * @author Andrei
+ *
  *
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
