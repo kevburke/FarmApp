@@ -62,7 +62,29 @@ public class login extends Activity {
 	String[] replacement_maternal_prog ;
 	String[] dairy ;
 	String[] calving_diff;
-	String[] trait_reliability ;
+	String[] trait_reliability;
+	String[] replaceStar;
+	String[] termStar;
+	String[] dairyStar;
+	String[] docileStar;
+	String[] carcassWeighStar;
+	String[] carcassConformStar;
+	String[] daughterMilkStar;
+	String[] daughterCalvIntStar;
+	String[] replacement_index;
+	String[] docility_index;
+	String[] docility_reliability;
+	String[] carcassWeiIndx;
+	String[] carcassWeightRel;
+	String[] daughter_Calving_Diff;
+	String[] daughter_Milk_index;
+	String[] daughter_milk_rel;
+	String[] carcass_conform_index;
+	String[] carcass_conform_rel;
+	String[] daughter_calving_rel;
+	String[] daughter_calv_int;
+	String[] daughter_calv_int_rel;
+
 	/**
 	 * Called when the activity is first created.
 	 */
@@ -83,6 +105,7 @@ public class login extends Activity {
 		setContentView(R.layout.main);
 		initControls();
 	}
+
 
 	private void initControls() {
 		//Set the activity layout.
@@ -266,6 +289,28 @@ public class login extends Activity {
 				JSONArray Jindairy = jsonResult.getJSONArray("dairy");
 				JSONArray Jincalving_diff = jsonResult.getJSONArray("calving_diff");
 				JSONArray Jintrait_reliability = jsonResult.getJSONArray("trait_reliability");
+				JSONArray Jinreplacement_index = jsonResult.getJSONArray("replacement_index");
+				JSONArray JinreplaceStar = jsonResult.getJSONArray("replaceStar");
+				JSONArray JintermStar = jsonResult.getJSONArray("termStar");
+				JSONArray JindairyStar = jsonResult.getJSONArray("dairyStar");
+				JSONArray JindocileStar = jsonResult.getJSONArray("docileStar");
+				JSONArray JincarcassWeighStar = jsonResult.getJSONArray("carcassWeighStar");
+				JSONArray JincarcassWeiIndx = jsonResult.getJSONArray("carcassWeiIndx");
+				JSONArray JincarcassWeightRel = jsonResult.getJSONArray("carcassWeightRel");
+				JSONArray JincarcassConformStar = jsonResult.getJSONArray("carcassConformStar");
+				JSONArray JindaughterMilkStar = jsonResult.getJSONArray("daughterMilkStar");
+				JSONArray JindaughterCalvIntStar = jsonResult.getJSONArray("daughterCalvIntStar");
+				JSONArray Jindocility_index = jsonResult.getJSONArray("docility_index");
+				JSONArray Jindocility_reliability = jsonResult.getJSONArray("docility_reliability");
+				JSONArray Jindaughter_Calving_Diff = jsonResult.getJSONArray("daughter_Calving_Diff");
+				JSONArray Jindaughter_calving_rel = jsonResult.getJSONArray("daughter_calving_rel");
+				JSONArray Jindaughter_Milk_index = jsonResult.getJSONArray("daughter_Milk_index");
+				JSONArray Jincarcass_conform_index = jsonResult.getJSONArray("carcass_conform_index");
+				JSONArray Jincarcass_conform_rel = jsonResult.getJSONArray("carcass_conform_rel");
+				JSONArray Jindaughter_milk_rel = jsonResult.getJSONArray("daughter_milk_rel");
+				JSONArray Jindaughter_calv_int = jsonResult.getJSONArray("daughter_calv_int");
+				JSONArray Jindaughter_calv_int_rel = jsonResult.getJSONArray("daughter_calv_int_rel");
+
 
 				jumbo = new String[Jinjumbo.length()];
 				num = new String[Jinjumbo.length()];
@@ -283,6 +328,27 @@ public class login extends Activity {
 				dairy = new String[Jinjumbo.length()];
 				calving_diff = new String[Jinjumbo.length()];
 				trait_reliability = new String[Jinjumbo.length()];
+				replacement_index = new String[Jinjumbo.length()];
+				replaceStar = new String[Jinjumbo.length()];
+				termStar = new String[Jinjumbo.length()];
+				dairyStar = new String[Jinjumbo.length()];
+				docileStar = new String[Jinjumbo.length()];
+				carcassWeighStar = new String[Jinjumbo.length()];
+				carcassWeiIndx = new String[Jinjumbo.length()];
+				carcassWeightRel = new String[Jinjumbo.length()];
+				carcassConformStar = new String[Jinjumbo.length()];
+				daughterMilkStar = new String[Jinjumbo.length()];
+				daughterCalvIntStar = new String[Jinjumbo.length()];
+				docility_index = new String[Jinjumbo.length()];
+				docility_reliability = new String[Jinjumbo.length()];
+				daughter_Calving_Diff = new String[Jinjumbo.length()];
+				daughter_calving_rel = new String[Jinjumbo.length()];
+				daughter_Milk_index = new String[Jinjumbo.length()];
+				carcass_conform_index = new String[Jinjumbo.length()];
+				carcass_conform_rel = new String[Jinjumbo.length()];
+				daughter_milk_rel = new String[Jinjumbo.length()];
+				daughter_calv_int = new String[Jinjumbo.length()];
+				daughter_calv_int_rel = new String[Jinjumbo.length()];
 
 				for (int i = 0; i < Jinjumbo.length() ; i++) {
 
@@ -302,7 +368,27 @@ public class login extends Activity {
 					dairy[i] = Jindairy.getString(i);
 					calving_diff[i] = Jincalving_diff.getString(i);
 					trait_reliability[i] = Jintrait_reliability.getString(i);
-
+					replacement_index[i] = Jinreplacement_index.getString(i);
+					replaceStar[i] = JinreplaceStar.getString(i);
+					termStar[i] = JintermStar.getString(i);
+					dairyStar[i] = JindairyStar.getString(i);
+					docileStar[i] = JindocileStar.getString(i);
+					carcassWeighStar[i] = JincarcassWeighStar.getString(i);
+					carcassWeiIndx[i] = JincarcassWeiIndx.getString(i);
+					carcassWeightRel[i] = JincarcassWeightRel.getString(i);
+					carcassConformStar[i] = JincarcassConformStar.getString(i);
+					daughterMilkStar[i] = JindaughterMilkStar.getString(i);
+					daughterCalvIntStar[i] = JindaughterCalvIntStar.getString(i);
+					docility_index[i] = Jindocility_index.getString(i);
+					docility_reliability[i] = Jindocility_reliability.getString(i);
+					daughter_Calving_Diff[i] = Jindaughter_Calving_Diff.getString(i);
+					daughter_calving_rel[i] = Jindaughter_calving_rel.getString(i);
+					daughter_Milk_index[i] = Jindaughter_Milk_index.getString(i);
+					carcass_conform_index[i] = Jincarcass_conform_index.getString(i);
+					carcass_conform_rel[i] = Jincarcass_conform_rel.getString(i);
+					daughter_milk_rel[i] = Jindaughter_milk_rel.getString(i);
+					daughter_calv_int[i] = Jindaughter_calv_int.getString(i);
+					daughter_calv_int_rel[i] = Jindaughter_calv_int_rel.getString(i);
 				}
 				addDataBaseTable();
 				insertData();
@@ -311,7 +397,7 @@ public class login extends Activity {
 				e.printStackTrace();
 			}
 
-			Toast.makeText(getBaseContext(), "Data Sent!", Toast.LENGTH_LONG).show();
+			Toast.makeText(getBaseContext(), "Data In!", Toast.LENGTH_LONG).show();
 		}//on post execute
 	}//http async task
 	/**
@@ -366,24 +452,44 @@ public class login extends Activity {
 			//insert rows
 			for(int i = 0; i < jumbo.length;i++)
 			{
-				db.execSQL( "insert into "+Tblname+"(jumbo, num, sex, dob, name, status, breed, dam, sire, replacement, replacement_maternal, terminal, replacement_maternal_prog, dairy, calving_diff, trait_reliability) "
+				db.execSQL( "insert into "+Tblname+"(jumbo, num, sex, dob, name, status, breed, dam, sire, replacement, replacement_maternal, terminal, replacement_maternal_prog, dairy, calving_diff, trait_reliability, replacement_index, replaceStar, termStar, dairyStar, docileStar, carcassWeighStar, carcassWeiIndx, carcassWeightRel, carcassConformStar, daughterMilkStar, daughterCalvIntStar, docility_index, docility_reliability, daughter_Calving_Diff, daughter_calving_rel, daughter_Milk_index, carcass_conform_index, carcass_conform_rel, daughter_milk_rel, daughter_calv_int, daughter_calv_int_rel) "
 						+ " values ('"+jumbo[i]+
-						         "' , '"+num[i]+
-						         "' , '"+sex[i]+
-						         "' , '"+dob[i]+
-						         "' , '"+name[i]+
-						         "' , '"+status[i]+
-						         "' , '"+breed[i]+
-						         "' , '"+dam[i]+
-						         "' , '"+sire[i]+
-						         "' , '"+replacement[i]+
-						         "' , '"+replacement_maternal[i]+
-						         "' , '"+terminal[i]+
-						         "' , '"+replacement_maternal_prog[i]+
-						         "' , '"+dairy[i]+
-						         "' , '"+calving_diff[i]+
-						         "' , '"+trait_reliability[i]+
-						         "');" );
+						"' , '"+num[i]+
+						"' , '"+sex[i]+
+						"' , '"+dob[i]+
+						"' , '"+name[i]+
+						"' , '"+status[i]+
+						"' , '"+breed[i]+
+						"' , '"+dam[i]+
+						"' , '"+sire[i]+
+						"' , '"+replacement[i]+
+						"' , '"+replacement_maternal[i]+
+						"' , '"+terminal[i]+
+						"' , '"+replacement_maternal_prog[i]+
+						"' , '"+dairy[i]+
+						"' , '"+calving_diff[i]+
+						"' , '"+trait_reliability[i]+
+						"' , '"+replacement_index[i]+
+						"' , '"+replaceStar[i]+
+						"' , '"+termStar[i]+
+						"' , '"+dairyStar[i]+
+						"' , '"+docileStar[i]+
+						"' , '"+carcassWeighStar[i]+
+						"' , '"+carcassWeiIndx[i]+
+						"' , '"+carcassWeightRel[i]+
+						"' , '"+carcassConformStar[i]+
+						"' , '"+daughterMilkStar[i]+
+						"' , '"+daughterCalvIntStar[i]+
+						"' , '"+docility_index[i]+
+						"' , '"+docility_reliability[i]+
+						"' , '"+daughter_Calving_Diff[i]+
+						"' , '"+daughter_calving_rel[i]+
+						"' , '"+daughter_Milk_index[i]+
+						"' , '"+carcass_conform_index[i]+
+						"' , '"+carcass_conform_rel[i]+
+						"' , '"+daughter_milk_rel[i]+
+						"' , '"+daughter_calv_int[i]+
+						"' , '"+daughter_calv_int_rel[i]+"');" );
 			}
 
 			//commit your changes
@@ -394,6 +500,7 @@ public class login extends Activity {
 		}
 		finally {
 			db.endTransaction();
+			Toast.makeText(getBaseContext(), "DataBase Done", Toast.LENGTH_LONG).show();
 		}
 
 
@@ -402,6 +509,7 @@ public class login extends Activity {
 
 		db.beginTransaction();
 		try {
+			db.execSQL("DROP TABLE IF EXISTS '" + Tblname + "'");
 			//create table
 
 			db.execSQL("create table "+Tblname+"("
@@ -421,7 +529,29 @@ public class login extends Activity {
 					+ " replacement_maternal_prog  text, "
 					+ " dairy  text, "
 					+ " calving_diff  text, "
-					+ " trait_reliability text );  ");
+					+ " trait_reliability  text, "
+					+ " replacement_index  text, "
+					+ " replaceStar  text, "
+					+ " termStar  text, "
+					+ " dairyStar  text, "
+					+ " docileStar  text, "
+					+ " carcassWeighStar  text, "
+					+ " carcassWeiIndx  text, "
+					+ " carcassWeightRel  text, "
+					+ " carcassConformStar  text, "
+					+ " daughterMilkStar  text, "
+					+ " daughterCalvIntStar  text, "
+					+ " docility_index  text, "
+					+ " docility_reliability  text, "
+					+ " daughter_Calving_Diff  text, "
+					+ " daughter_calving_rel  text, "
+					+ " daughter_Milk_index  text, "
+					+ " carcass_conform_index  text, "
+					+ " carcass_conform_rel  text, "
+					+ " daughter_milk_rel  text, "
+					+ " daughter_calv_int  text, "
+					+ " daughter_calv_int_rel  text"
+					+ ");  ");
 
 
 			//commit your changes
