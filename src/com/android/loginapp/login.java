@@ -357,7 +357,7 @@ public class login extends Activity {
 						sire[i] = "No Name";
 					}
 					else
-						name[i] = Jinname.getString(i);
+						name[i] = Jinsire.getString(i);
 
 					jumbo[i] = Jinjumbo.getString(i);
 					num[i] = Jinnum.getString(i);
