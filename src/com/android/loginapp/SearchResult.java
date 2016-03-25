@@ -145,8 +145,8 @@ public class SearchResult extends Activity {
                 jumbo+"\n"+
                 num+"\n"+
                 sex+"\n"+
-                dob+"\n"+
-                name+"\n"+
+                dob+"\n65"+
+                name+"65\n"+
                 status+"\n"+
                 breed+"\n"+
                 dam+"\n"+
@@ -194,6 +194,7 @@ public class SearchResult extends Activity {
         textView3 = (TextView) findViewById(R.id.textView5);
         textView4 = (TextView) findViewById(R.id.textView6);
         textView5 = (TextView) findViewById(R.id.textView7);
+
 
         //textView2.setTextSize(20);
         textView1.setText(jumbo);

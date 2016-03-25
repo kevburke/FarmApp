@@ -348,16 +348,24 @@ public class login extends Activity {
 				daughter_calv_int_rel = new String[Jinjumbo.length()];
 
 				for (int i = 0; i < Jinjumbo.length() ; i++) {
+					if(Jinname.getString(i).length()<3){
+						name[i] = "No Name";
+					}
+					else
+						name[i] = Jinname.getString(i);
+					if(Jinsire.getString(i).length()<3){
+						sire[i] = "No Name";
+					}
+					else
+						name[i] = Jinname.getString(i);
 
 					jumbo[i] = Jinjumbo.getString(i);
 					num[i] = Jinnum.getString(i);
 					sex[i] = Jinsex.getString(i);
 					dob[i] = Jindob.getString(i);
-					name[i] = Jinname.getString(i);
 					status[i] = Jinstatus.getString(i);
 					breed[i] = Jinbreed.getString(i);
 					dam [i] = Jindam.getString(i);
-					sire[i] = Jinsire.getString(i);
 					replacement[i] = Jinreplacement.getString(i);
 					replacement_maternal[i] = Jinreplacement_maternal.getString(i);
 					terminal[i] = Jinterminal.getString(i);
