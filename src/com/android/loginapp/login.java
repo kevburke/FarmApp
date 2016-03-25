@@ -209,15 +209,12 @@ public class login extends Activity {
 			json.put("username",outUser);
 			json.put("password",outPass);
 
+			//String baseUrl = "http://192.168.1.4:8080/InputOutput";
 			String baseUrl = "http://192.168.1.4:8080/InputOutput";
-
 			new HttpAsyncTask().execute(baseUrl, json.toString());
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-
-
-
 
 		System.out.println("*******************"+ thisUsername + "*********************"+ thisPassword);
 		System.out.println("Im after logging in .................@@@@@@@@@@@@");

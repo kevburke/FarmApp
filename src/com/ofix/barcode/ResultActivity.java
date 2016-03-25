@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.TextView;
-import com.android.loginapp.Helloworld;
+import com.android.loginapp.SearchResult;
 import com.google.zxing.client.android.CaptureActivity;
 
 public class ResultActivity extends Activity {
@@ -17,6 +17,8 @@ public class ResultActivity extends Activity {
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(CaptureActivity.BARCODE_ID);
+        String parse = message.substring(message.length()-3);
+
 
         // Create the text view
         TextView textView = new TextView(this);
@@ -24,12 +26,12 @@ public class ResultActivity extends Activity {
         textView.setText(message);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("Cow",message);
+        editor.putString("Cow",parse);
         editor.apply();
         // Set the text view as the activity layout
         setContentView(textView);
 
-        Intent in = new Intent(ResultActivity.this, Helloworld.class);
+        Intent in = new Intent(ResultActivity.this, SearchResult.class);
         startActivity(in);
     }
 }

@@ -7,8 +7,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 /**
  * Adapts the database to deal with the front end.
- * 
- *
  *
  */
 public class DatabaseAdapter {
