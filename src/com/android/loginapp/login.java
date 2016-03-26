@@ -84,7 +84,48 @@ public class login extends Activity {
 	String[] daughter_calving_rel;
 	String[] daughter_calv_int;
 	String[] daughter_calv_int_rel;
-
+	String[] MRank;
+	String[] MCode;
+	String[] MBullName;
+	String[] MBreed;
+	String[] MIndex;
+	String[] MRel1;
+	String[] MStarsWithin;
+	String[] MStarsAcross;
+	String[] MCalvDiff;
+	String[] MRel2;
+	String[] MGest;
+	String[] MRel3;
+	String[] MDocility;
+	String[] MRel4;
+	String[] MCarcassWeightkgs;
+	String[] MRel5;
+	String[] MCarcassConf;
+	String[] MRel6;
+	String[] MAvail;
+	String[] MPrice;
+	String[] MSupplier;
+	String[] TRank;
+	String[] TCode;
+	String[] TBullName;
+	String[] TBreed;
+	String[] TIndex;
+	String[] TRel1;
+	String[] TStarsWithin;
+	String[] TStarsAcross;
+	String[] TCalvDiff;
+	String[] TRel2;
+	String[] TGest;
+	String[] TRel3;
+	String[] TDocility;
+	String[] TRel4;
+	String[] TCarcassWeightkgs;
+	String[] TRel5;
+	String[] TCarcassConf;
+	String[] TRel6;
+	String[] TAvail;
+	String[] TPrice;
+	String[] TSupplier;
 	/**
 	 * Called when the activity is first created.
 	 */
@@ -307,7 +348,48 @@ public class login extends Activity {
 				JSONArray Jindaughter_milk_rel = jsonResult.getJSONArray("daughter_milk_rel");
 				JSONArray Jindaughter_calv_int = jsonResult.getJSONArray("daughter_calv_int");
 				JSONArray Jindaughter_calv_int_rel = jsonResult.getJSONArray("daughter_calv_int_rel");
-
+				JSONArray  JinMRank= jsonResult.getJSONArray("MRank");
+				JSONArray  JinMCode= jsonResult.getJSONArray("MCode");
+				JSONArray  JinMBullName= jsonResult.getJSONArray("MBullName");
+				JSONArray  JinMBreed= jsonResult.getJSONArray("MBreed");
+				JSONArray  JinMIndex= jsonResult.getJSONArray("MIndex");
+				JSONArray  JinMRel1= jsonResult.getJSONArray("MRel1");
+				JSONArray  JinMStarsWithin= jsonResult.getJSONArray("MStarsWithin");
+				JSONArray  JinMStarsAcross= jsonResult.getJSONArray("MStarsAcross");
+				JSONArray  JinMCalvDiff= jsonResult.getJSONArray("MCalvDiff");
+				JSONArray  JinMRel2= jsonResult.getJSONArray("MRel2");
+				JSONArray  JinMGest= jsonResult.getJSONArray("MGest");
+				JSONArray  JinMRel3= jsonResult.getJSONArray("MRel3");
+				JSONArray  JinMDocility= jsonResult.getJSONArray("MDocility");
+				JSONArray  JinMRel4= jsonResult.getJSONArray("MRel4");
+				JSONArray  JinMCarcassWeightkgs= jsonResult.getJSONArray("MCarcassWeightkgs");
+				JSONArray  JinMRel5= jsonResult.getJSONArray("MRel5");
+				JSONArray  JinMCarcassConf= jsonResult.getJSONArray("MCarcassConf");
+				JSONArray  JinMRel6= jsonResult.getJSONArray("MRel6");
+				JSONArray  JinMAvail= jsonResult.getJSONArray("MAvail");
+				JSONArray  JinMPrice= jsonResult.getJSONArray("MPrice");
+				JSONArray  JinMSupplier= jsonResult.getJSONArray("MSupplier");
+				JSONArray  JinTRank= jsonResult.getJSONArray("TRank");
+				JSONArray  JinTCode= jsonResult.getJSONArray("TCode");
+				JSONArray  JinTBullName= jsonResult.getJSONArray("TBullName");
+				JSONArray  JinTBreed= jsonResult.getJSONArray("TBreed");
+				JSONArray  JinTIndex= jsonResult.getJSONArray("TIndex");
+				JSONArray  JinTRel1= jsonResult.getJSONArray("TRel1");
+				JSONArray  JinTStarsWithin= jsonResult.getJSONArray("TStarsWithin");
+				JSONArray  JinTStarsAcross= jsonResult.getJSONArray("TStarsAcross");
+				JSONArray  JinTCalvDiff= jsonResult.getJSONArray("TCalvDiff");
+				JSONArray  JinTRel2= jsonResult.getJSONArray("TRel2");
+				JSONArray  JinTGest= jsonResult.getJSONArray("TGest");
+				JSONArray  JinTRel3= jsonResult.getJSONArray("TRel3");
+				JSONArray  JinTDocility= jsonResult.getJSONArray("TDocility");
+				JSONArray  JinTRel4= jsonResult.getJSONArray("TRel4");
+				JSONArray  JinTCarcassWeightkgs= jsonResult.getJSONArray("TCarcassWeightkgs");
+				JSONArray  JinTRel5= jsonResult.getJSONArray("TRel5");
+				JSONArray  JinTCarcassConf= jsonResult.getJSONArray("TCarcassConf");
+				JSONArray  JinTRel6= jsonResult.getJSONArray("TRel6");
+				JSONArray  JinTAvail= jsonResult.getJSONArray("TAvail");
+				JSONArray  JinTPrice= jsonResult.getJSONArray("TPrice");
+				JSONArray  JinTSupplier= jsonResult.getJSONArray("TSupplier");
 
 				jumbo = new String[Jinjumbo.length()];
 				num = new String[Jinjumbo.length()];
@@ -346,6 +428,48 @@ public class login extends Activity {
 				daughter_milk_rel = new String[Jinjumbo.length()];
 				daughter_calv_int = new String[Jinjumbo.length()];
 				daughter_calv_int_rel = new String[Jinjumbo.length()];
+				MRank =new String[JinMRank.length()];
+				MCode =new String[JinMRank.length()];
+				MBullName =new String[JinMRank.length()];
+				MBreed =new String[JinMRank.length()];
+				MIndex =new String[JinMRank.length()];
+				MRel1 =new String[JinMRank.length()];
+				MStarsWithin =new String[JinMRank.length()];
+				MStarsAcross =new String[JinMRank.length()];
+				MCalvDiff =new String[JinMRank.length()];
+				MRel2 =new String[JinMRank.length()];
+				MGest =new String[JinMRank.length()];
+				MRel3 =new String[JinMRank.length()];
+				MDocility =new String[JinMRank.length()];
+				MRel4 =new String[JinMRank.length()];
+				MCarcassWeightkgs =new String[JinMRank.length()];
+				MRel5 =new String[JinMRank.length()];
+				MCarcassConf =new String[JinMRank.length()];
+				MRel6 =new String[JinMRank.length()];
+				MAvail =new String[JinMRank.length()];
+				MPrice =new String[JinMRank.length()];
+				MSupplier =new String[JinMRank.length()];
+				TRank =new String[JinTRank.length()];
+				TCode =new String[JinTRank.length()];
+				TBullName =new String[JinTRank.length()];
+				TBreed =new String[JinTRank.length()];
+				TIndex =new String[JinTRank.length()];
+				TRel1 =new String[JinTRank.length()];
+				TStarsWithin =new String[JinTRank.length()];
+				TStarsAcross =new String[JinTRank.length()];
+				TCalvDiff =new String[JinTRank.length()];
+				TRel2 =new String[JinTRank.length()];
+				TGest =new String[JinTRank.length()];
+				TRel3 =new String[JinTRank.length()];
+				TDocility =new String[JinTRank.length()];
+				TRel4 =new String[JinTRank.length()];
+				TCarcassWeightkgs =new String[JinTRank.length()];
+				TRel5 =new String[JinTRank.length()];
+				TCarcassConf =new String[JinTRank.length()];
+				TRel6 =new String[JinTRank.length()];
+				TAvail =new String[JinTRank.length()];
+				TPrice =new String[JinTRank.length()];
+				TSupplier =new String[JinTRank.length()];
 
 				for (int i = 0; i < Jinjumbo.length() ; i++) {
 					if(Jinname.getString(i).length()<3){
@@ -353,11 +477,18 @@ public class login extends Activity {
 					}
 					else
 						name[i] = Jinname.getString(i);
+
 					if(Jinsire.getString(i).length()<3){
 						sire[i] = "No Name";
 					}
 					else
-						name[i] = Jinsire.getString(i);
+						sire[i] = Jinsire.getString(i);
+
+					if(Jindairy.getString(i).length()<3){
+						dairy[i] = "No Name";
+					}
+					else
+						dairy[i] = Jindairy.getString(i);
 
 					jumbo[i] = Jinjumbo.getString(i);
 					num[i] = Jinnum.getString(i);
@@ -370,7 +501,6 @@ public class login extends Activity {
 					replacement_maternal[i] = Jinreplacement_maternal.getString(i);
 					terminal[i] = Jinterminal.getString(i);
 					replacement_maternal_prog[i] = Jinreplacement_maternal_prog.getString(i);
-					dairy[i] = Jindairy.getString(i);
 					calving_diff[i] = Jincalving_diff.getString(i);
 					trait_reliability[i] = Jintrait_reliability.getString(i);
 					replacement_index[i] = Jinreplacement_index.getString(i);
@@ -394,9 +524,55 @@ public class login extends Activity {
 					daughter_milk_rel[i] = Jindaughter_milk_rel.getString(i);
 					daughter_calv_int[i] = Jindaughter_calv_int.getString(i);
 					daughter_calv_int_rel[i] = Jindaughter_calv_int_rel.getString(i);
+					MRank[i] = JinMRank.getString(i);
+					MCode[i] = JinMCode.getString(i);
+					MBullName[i] = JinMBullName.getString(i);
+					MBreed[i] = JinMBreed.getString(i);
+					MIndex[i] = JinMIndex.getString(i);
+					MRel1[i] = JinMRel1.getString(i);
+					MStarsWithin[i] = JinMStarsWithin.getString(i);
+					MStarsAcross[i] = JinMStarsAcross.getString(i);
+					MCalvDiff[i] = JinMCalvDiff.getString(i);
+					MRel2[i] = JinMRel2.getString(i);
+					MGest[i] = JinMGest.getString(i);
+					MRel3[i] = JinMRel3.getString(i);
+					MDocility[i] = JinMDocility.getString(i);
+					MRel4[i] = JinMRel4.getString(i);
+					MCarcassWeightkgs[i] = JinMCarcassWeightkgs.getString(i);
+					MRel5[i] = JinMRel5.getString(i);
+					MCarcassConf[i] = JinMCarcassConf.getString(i);
+					MRel6[i] = JinMRel6.getString(i);
+					MAvail[i] = JinMAvail.getString(i);
+					MPrice[i] = JinMPrice.getString(i);
+					MSupplier[i] = JinMSupplier.getString(i);
+					TRank[i] = JinTRank.getString(i);
+					TCode[i] = JinTCode.getString(i);
+					TBullName[i] = JinTBullName.getString(i);
+					TBreed[i] = JinTBreed.getString(i);
+					TIndex[i] = JinTIndex.getString(i);
+					TRel1[i] = JinTRel1.getString(i);
+					TStarsWithin[i] = JinTStarsWithin.getString(i);
+					TStarsAcross[i] = JinTStarsAcross.getString(i);
+					TCalvDiff[i] = JinTCalvDiff.getString(i);
+					TRel2[i] = JinTRel2.getString(i);
+					TGest[i] = JinTGest.getString(i);
+					TRel3[i] = JinTRel3.getString(i);
+					TDocility[i] = JinTDocility.getString(i);
+					TRel4[i] = JinTRel4.getString(i);
+					TCarcassWeightkgs[i] = JinTCarcassWeightkgs.getString(i);
+					TRel5[i] = JinTRel5.getString(i);
+					TCarcassConf[i] = JinTCarcassConf.getString(i);
+					TRel6[i] = JinTRel6.getString(i);
+					TAvail[i] = JinTAvail.getString(i);
+					TPrice[i] = JinTPrice.getString(i);
+					TSupplier[i] = JinTSupplier.getString(i);
 				}
 				addDataBaseTable();
+				addDataBaseTableT();
+				addDataBaseTableM();
 				insertData();
+				insertDataT();
+				insertDataM();
 
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -510,11 +686,101 @@ public class login extends Activity {
 
 
 	}
+	private void insertDataT() {
+
+		db.beginTransaction();
+		try {
+
+			//insert rows
+			for(int i = 0; i < TRank.length;i++)
+			{
+				db.execSQL( "insert into "+"BullsTerminal"+ "(jumbo, num, sex, dob, name, status, breed, dam, sire, replacement, replacement_maternal, terminal, replacement_maternal_prog, dairy, calving_diff, trait_reliability, replacement_index, replaceStar, termStar, dairyStar, docileStar, carcassWeighStar, carcassWeiIndx, carcassWeightRel, carcassConformStar, daughterMilkStar, daughterCalvIntStar, docility_index, docility_reliability, daughter_Calving_Diff, daughter_calving_rel, daughter_Milk_index, carcass_conform_index, carcass_conform_rel, daughter_milk_rel, daughter_calv_int, daughter_calv_int_rel) "
+						+ " values ('"+TRank[i]+
+						"' , '"+TCode[i]+
+						"' , '"+TBullName[i]+
+						"' , '"+TBreed[i]+
+						"' , '"+TIndex[i]+
+						"' , '"+TRel1[i]+
+						"' , '"+TStarsWithin[i]+
+						"' , '"+TStarsAcross[i]+
+						"' , '"+TCalvDiff[i]+
+						"' , '"+TRel2[i]+
+						"' , '"+TGest[i]+
+						"' , '"+TRel3[i]+
+						"' , '"+TDocility[i]+
+						"' , '"+TRel4[i]+
+						"' , '"+TCarcassWeightkgs[i]+
+						"' , '"+TRel5[i]+
+						"' , '"+TCarcassConf[i]+
+						"' , '"+TRel6[i]+
+						"' , '"+TAvail[i]+
+						"' , '"+TPrice[i]+
+						"' , '"+TSupplier[i]+"');" );
+			}
+
+			//commit your changes
+			db.setTransactionSuccessful();
+
+		}
+		catch (SQLiteException e2) {
+		}
+		finally {
+			db.endTransaction();
+			Toast.makeText(getBaseContext(), "DataBase Done", Toast.LENGTH_LONG).show();
+		}
+
+
+	}
+	private void insertDataM() {
+
+		db.beginTransaction();
+		try {
+
+			//insert rows
+			for(int i = 0; i < MRank.length;i++)
+			{
+				db.execSQL( "insert into "+"BullsMaternal"+"(Rank, Code, BullName, Breed, Index, Rel1, StarsWithin, StarsAcross, CalvDiff, Rel2, Gest, Rel3, Docility, Rel4, CarcassWeight, Rel4, CarcassConf, Rel5, Avail, Price, Supplier) "
+						+ " values ('"+MRank[i]+
+						"' , '"+MCode[i]+
+						"' , '"+MBullName[i]+
+						"' , '"+MBreed[i]+
+						"' , '"+MIndex[i]+
+						"' , '"+MRel1[i]+
+						"' , '"+MStarsWithin[i]+
+						"' , '"+MStarsAcross[i]+
+						"' , '"+MCalvDiff[i]+
+						"' , '"+MRel2[i]+
+						"' , '"+MGest[i]+
+						"' , '"+MRel3[i]+
+						"' , '"+MDocility[i]+
+						"' , '"+MRel4[i]+
+						"' , '"+MCarcassWeightkgs[i]+
+						"' , '"+MRel5[i]+
+						"' , '"+MCarcassConf[i]+
+						"' , '"+MRel6[i]+
+						"' , '"+MAvail[i]+
+						"' , '"+MPrice[i]+
+						"' , '"+MSupplier[i]+"');" );
+			}
+
+			//commit your changes
+			db.setTransactionSuccessful();
+
+		}
+		catch (SQLiteException e2) {
+		}
+		finally {
+			db.endTransaction();
+			Toast.makeText(getBaseContext(), "DataBase Mat Done", Toast.LENGTH_LONG).show();
+		}
+
+
+	}
 	private void addDataBaseTable() {
 
 		db.beginTransaction();
 		try {
-			db.execSQL("DROP TABLE IF EXISTS '" + Tblname + "'");
+			db.execSQL("DROP TABLE IF EXISTS '"+Tblname+"'");
 			//create table
 
 			db.execSQL("create table "+Tblname+"("
@@ -556,6 +822,96 @@ public class login extends Activity {
 					+ " daughter_milk_rel  text, "
 					+ " daughter_calv_int  text, "
 					+ " daughter_calv_int_rel  text"
+					+ ");  ");
+
+
+			//commit your changes
+			db.setTransactionSuccessful();
+
+		} catch (SQLException e1) {
+
+		}
+		finally {
+			db.endTransaction();
+		}
+
+
+	}
+	private void addDataBaseTableT() {
+
+		db.beginTransaction();
+		try {
+			db.execSQL("DROP TABLE IF EXISTS 'BullsTerminal'");
+			//create table
+
+			db.execSQL("create table BullsTerminal("
+					+ " recID integer PRIMARY KEY autoincrement, "
+					+ " TRank  text, "
+					+ " TCode  text, "
+					+ " TBullName  text, "
+					+ " TBreed  text, "
+					+ " TIndex  text, "
+					+ " TRel1  text, "
+					+ " TStarsWithin  text, "
+					+ " TStarsAcross  text, "
+					+ " TCalvDiff  text, "
+					+ " TRel2  text, "
+					+ " TGest  text, "
+					+ " TRel3  text, "
+					+ " TDocility  text, "
+					+ " TRel4  text, "
+					+ " TCarcassWeightkgs  text, "
+					+ " TRel5  text, "
+					+ " TCarcassConf  text, "
+					+ " TRel6  text, "
+					+ " TAvail  text, "
+					+ " TPrice  text, "
+					+ " TSupplier  text"
+					+ ");  ");
+
+
+			//commit your changes
+			db.setTransactionSuccessful();
+
+		} catch (SQLException e1) {
+
+		}
+		finally {
+			db.endTransaction();
+		}
+
+
+	}
+	private void addDataBaseTableM() {
+
+		db.beginTransaction();
+		try {
+			db.execSQL("DROP TABLE IF EXISTS 'BullsMaternal'");
+			//create table
+
+			db.execSQL("create table BullsMaternal("
+					+ " recID integer PRIMARY KEY autoincrement, "
+					+ " MRank  text, "
+					+ " MCode  text, "
+					+ " MBullName  text, "
+					+ " MBreed  text, "
+					+ " MIndex  text, "
+					+ " MRel1  text, "
+					+ " MStarsWithin  text, "
+					+ " MStarsAcross  text, "
+					+ " MCalvDiff  text, "
+					+ " MRel2  text, "
+					+ " MGest  text, "
+					+ " MRel3  text, "
+					+ " MDocility  text, "
+					+ " MRel4  text, "
+					+ " MCarcassWeightkgs  text, "
+					+ " MRel5  text, "
+					+ " MCarcassConf  text, "
+					+ " MRel6  text, "
+					+ " MAvail  text, "
+					+ " MPrice  text, "
+					+ " MSupplier  text"
 					+ ");  ");
 
 

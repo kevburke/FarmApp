@@ -60,6 +60,7 @@ public class SearchResult extends Activity {
     String daughter_calving_rel;
     String daughter_calv_int;
     String daughter_calv_int_rel;
+
     SQLiteDatabase db;
     TextView textView1;
     TextView textView2;
@@ -97,43 +98,43 @@ public class SearchResult extends Activity {
 //            while(cur.getColumnName(0).equalsIgnoreCase("name")){
 //                cur.moveToNext();
 //            }
-            jumbo                    = cur.getString(1);
-            num                      = cur.getString(2);
-            sex                      = cur.getString(3);
-            dob                      = cur.getString(4);
-            name                     = cur.getString(5);
-            status                   = cur.getString(6);
-            breed                    = cur.getString(7);
-            dam                      = cur.getString(8);
-            sire                     = cur.getString(9);
-            replacement              = cur.getString(10);
-            replacement_maternal     = cur.getString(11);
-            terminal                 = cur.getString(12);
+            jumbo= cur.getString(1);
+            num= cur.getString(2);
+            sex= cur.getString(3);
+            dob= cur.getString(4);
+            name= cur.getString(5);
+            status= cur.getString(6);
+            breed= cur.getString(7);
+            dam= cur.getString(8);
+            sire= cur.getString(9);
+            replacement= cur.getString(10);
+            replacement_maternal= cur.getString(11);
+            terminal= cur.getString(12);
             replacement_maternal_prog= cur.getString(13);
-            dairy                    = cur.getString(14);
-            calving_diff             = cur.getString(15);
-            trait_reliability        = cur.getString(16);
-            replaceStar              = cur.getString(17);
-            termStar                 = cur.getString(18);
-            dairyStar                = cur.getString(19);
-            docileStar               = cur.getString(20);
-            carcassWeighStar         = cur.getString(21);
-            carcassConformStar       = cur.getString(22);
-            daughterMilkStar         = cur.getString(23);
-            daughterCalvIntStar      = cur.getString(24);
-            replacement_index        = cur.getString(25);
-            docility_index           = cur.getString(26);
-            docility_reliability     = cur.getString(27);
-            carcassWeiIndx           = cur.getString(28);
-            carcassWeightRel         = cur.getString(29);
-            daughter_Calving_Diff    = cur.getString(30);
-            daughter_Milk_index      = cur.getString(31);
-            daughter_milk_rel        = cur.getString(32);
-            carcass_conform_index    = cur.getString(33);
-            carcass_conform_rel      = cur.getString(34);
-            daughter_calving_rel     = cur.getString(35);
-            daughter_calv_int        = cur.getString(36);
-            daughter_calv_int_rel    = cur.getString(37);
+            dairy= cur.getString(14);
+            calving_diff= cur.getString(15);
+            trait_reliability= cur.getString(16);
+            replacement_index= cur.getString(17);
+            replaceStar= cur.getString(18);
+            termStar= cur.getString(19);
+            dairyStar= cur.getString(20);
+            docileStar= cur.getString(21);
+            carcassWeighStar= cur.getString(22);
+            carcassWeiIndx= cur.getString(23);
+            carcassWeightRel= cur.getString(24);
+            carcassConformStar= cur.getString(25);
+            daughterMilkStar= cur.getString(26);
+            daughterCalvIntStar= cur.getString(27);
+            docility_index= cur.getString(28);
+            docility_reliability= cur.getString(29);
+            daughter_Calving_Diff= cur.getString(30);
+            daughter_calving_rel= cur.getString(31);
+            daughter_Milk_index= cur.getString(32);
+            carcass_conform_index= cur.getString(33);
+            carcass_conform_rel= cur.getString(34);
+            daughter_milk_rel= cur.getString(35);
+            daughter_calv_int= cur.getString(36);
+            daughter_calv_int_rel= cur.getString(37);
 
             db.setTransactionSuccessful();
         }catch (SQLException e){
@@ -198,9 +199,9 @@ public class SearchResult extends Activity {
 
         //textView2.setTextSize(20);
         textView1.setText(jumbo);
-        textView2.setText(num  );
-        textView3.setText(sex  );
-        textView4.setText(dob  );
+        textView2.setText(num);
+        textView3.setText(sex);
+        textView4.setText(dam);
         textView5.setText(replaceStar);
 
 
