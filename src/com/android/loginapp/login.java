@@ -524,6 +524,10 @@ public class login extends Activity {
 					daughter_milk_rel[i] = Jindaughter_milk_rel.getString(i);
 					daughter_calv_int[i] = Jindaughter_calv_int.getString(i);
 					daughter_calv_int_rel[i] = Jindaughter_calv_int_rel.getString(i);
+
+				}
+				for (int i = 0; i < JinMRank.length() ; i++) {
+
 					MRank[i] = JinMRank.getString(i);
 					MCode[i] = JinMCode.getString(i);
 					MBullName[i] = JinMBullName.getString(i);
@@ -545,6 +549,10 @@ public class login extends Activity {
 					MAvail[i] = JinMAvail.getString(i);
 					MPrice[i] = JinMPrice.getString(i);
 					MSupplier[i] = JinMSupplier.getString(i);
+
+
+				}
+				for (int i = 0; i < JinTRank.length() ; i++) {
 					TRank[i] = JinTRank.getString(i);
 					TCode[i] = JinTCode.getString(i);
 					TBullName[i] = JinTBullName.getString(i);
@@ -567,11 +575,17 @@ public class login extends Activity {
 					TPrice[i] = JinTPrice.getString(i);
 					TSupplier[i] = JinTSupplier.getString(i);
 				}
+				System.out.println("Add Table IE1313426");
 				addDataBaseTable();
+				System.out.println("Add Table TBulls");
 				addDataBaseTableT();
+				System.out.println("Add Table MBulls");
 				addDataBaseTableM();
+				System.out.println("insertData IE1313426");
 				insertData();
+				System.out.println("insertData TBulls");
 				insertDataT();
+				System.out.println("insertData MBulls");
 				insertDataM();
 
 			} catch (JSONException e) {
@@ -686,96 +700,7 @@ public class login extends Activity {
 
 
 	}
-	private void insertDataT() {
 
-		db.beginTransaction();
-		try {
-
-			//insert rows
-			for(int i = 0; i < TRank.length;i++)
-			{
-				db.execSQL( "insert into "+"BullsTerminal"+ "(jumbo, num, sex, dob, name, status, breed, dam, sire, replacement, replacement_maternal, terminal, replacement_maternal_prog, dairy, calving_diff, trait_reliability, replacement_index, replaceStar, termStar, dairyStar, docileStar, carcassWeighStar, carcassWeiIndx, carcassWeightRel, carcassConformStar, daughterMilkStar, daughterCalvIntStar, docility_index, docility_reliability, daughter_Calving_Diff, daughter_calving_rel, daughter_Milk_index, carcass_conform_index, carcass_conform_rel, daughter_milk_rel, daughter_calv_int, daughter_calv_int_rel) "
-						+ " values ('"+TRank[i]+
-						"' , '"+TCode[i]+
-						"' , '"+TBullName[i]+
-						"' , '"+TBreed[i]+
-						"' , '"+TIndex[i]+
-						"' , '"+TRel1[i]+
-						"' , '"+TStarsWithin[i]+
-						"' , '"+TStarsAcross[i]+
-						"' , '"+TCalvDiff[i]+
-						"' , '"+TRel2[i]+
-						"' , '"+TGest[i]+
-						"' , '"+TRel3[i]+
-						"' , '"+TDocility[i]+
-						"' , '"+TRel4[i]+
-						"' , '"+TCarcassWeightkgs[i]+
-						"' , '"+TRel5[i]+
-						"' , '"+TCarcassConf[i]+
-						"' , '"+TRel6[i]+
-						"' , '"+TAvail[i]+
-						"' , '"+TPrice[i]+
-						"' , '"+TSupplier[i]+"');" );
-			}
-
-			//commit your changes
-			db.setTransactionSuccessful();
-
-		}
-		catch (SQLiteException e2) {
-		}
-		finally {
-			db.endTransaction();
-			Toast.makeText(getBaseContext(), "DataBase Done", Toast.LENGTH_LONG).show();
-		}
-
-
-	}
-	private void insertDataM() {
-
-		db.beginTransaction();
-		try {
-
-			//insert rows
-			for(int i = 0; i < MRank.length;i++)
-			{
-				db.execSQL( "insert into "+"BullsMaternal"+"(Rank, Code, BullName, Breed, Index, Rel1, StarsWithin, StarsAcross, CalvDiff, Rel2, Gest, Rel3, Docility, Rel4, CarcassWeight, Rel4, CarcassConf, Rel5, Avail, Price, Supplier) "
-						+ " values ('"+MRank[i]+
-						"' , '"+MCode[i]+
-						"' , '"+MBullName[i]+
-						"' , '"+MBreed[i]+
-						"' , '"+MIndex[i]+
-						"' , '"+MRel1[i]+
-						"' , '"+MStarsWithin[i]+
-						"' , '"+MStarsAcross[i]+
-						"' , '"+MCalvDiff[i]+
-						"' , '"+MRel2[i]+
-						"' , '"+MGest[i]+
-						"' , '"+MRel3[i]+
-						"' , '"+MDocility[i]+
-						"' , '"+MRel4[i]+
-						"' , '"+MCarcassWeightkgs[i]+
-						"' , '"+MRel5[i]+
-						"' , '"+MCarcassConf[i]+
-						"' , '"+MRel6[i]+
-						"' , '"+MAvail[i]+
-						"' , '"+MPrice[i]+
-						"' , '"+MSupplier[i]+"');" );
-			}
-
-			//commit your changes
-			db.setTransactionSuccessful();
-
-		}
-		catch (SQLiteException e2) {
-		}
-		finally {
-			db.endTransaction();
-			Toast.makeText(getBaseContext(), "DataBase Mat Done", Toast.LENGTH_LONG).show();
-		}
-
-
-	}
 	private void addDataBaseTable() {
 
 		db.beginTransaction();
@@ -848,9 +773,9 @@ public class login extends Activity {
 					+ " recID integer PRIMARY KEY autoincrement, "
 					+ " TRank  text, "
 					+ " TCode  text, "
-					+ " TBullName  text, "
+					+ " TBullName  blob, "
 					+ " TBreed  text, "
-					+ " TIndex  text, "
+					+ " TBullIndex  text, "
 					+ " TRel1  text, "
 					+ " TStarsWithin  text, "
 					+ " TStarsAcross  text, "
@@ -860,7 +785,7 @@ public class login extends Activity {
 					+ " TRel3  text, "
 					+ " TDocility  text, "
 					+ " TRel4  text, "
-					+ " TCarcassWeightkgs  text, "
+					+ " TCarcassWeight  text, "
 					+ " TRel5  text, "
 					+ " TCarcassConf  text, "
 					+ " TRel6  text, "
@@ -869,12 +794,11 @@ public class login extends Activity {
 					+ " TSupplier  text"
 					+ ");  ");
 
-
 			//commit your changes
 			db.setTransactionSuccessful();
 
 		} catch (SQLException e1) {
-
+			System.out.println(e1);
 		}
 		finally {
 			db.endTransaction();
@@ -882,6 +806,52 @@ public class login extends Activity {
 
 
 	}
+	private void insertDataT() {
+
+		db.beginTransaction();
+		try {
+
+			//insert rows
+			for(int i = 0; i < TRank.length;i++)
+			{
+				db.execSQL( "insert into BullsTerminal(TRank, TCode, TBullName, TBreed, TBullIndex, TRel1, TStarsWithin, TStarsAcross, TCalvDiff, TRel2, TGest, TRel3, TDocility, TRel4, TCarcassWeight, TRel4, TCarcassConf, TRel5, TAvail, TPrice, TSupplier) "
+						+ " values ('"+TRank[i]+
+						"' , '"+TCode[i]+
+						"' , '"+TBullName[i]+
+						"' , '"+TBreed[i]+
+						"' , '"+TIndex[i]+
+						"' , '"+TRel1[i]+
+						"' , '"+TStarsWithin[i]+
+						"' , '"+TStarsAcross[i]+
+						"' , '"+TCalvDiff[i]+
+						"' , '"+TRel2[i]+
+						"' , '"+TGest[i]+
+						"' , '"+TRel3[i]+
+						"' , '"+TDocility[i]+
+						"' , '"+TRel4[i]+
+						"' , '"+TCarcassWeightkgs[i]+
+						"' , '"+TRel5[i]+
+						"' , '"+TCarcassConf[i]+
+						"' , '"+TRel6[i]+
+						"' , '"+TAvail[i]+
+						"' , '"+TPrice[i]+
+						"' , '"+TSupplier[i]+"');" );
+			}
+
+			//commit your changes
+			db.setTransactionSuccessful();
+
+		}
+		catch (SQLiteException e2) {
+		}
+		finally {
+			db.endTransaction();
+			Toast.makeText(getBaseContext(), "DataBase Done", Toast.LENGTH_LONG).show();
+		}
+
+
+	}
+
 	private void addDataBaseTableM() {
 
 		db.beginTransaction();
@@ -893,9 +863,9 @@ public class login extends Activity {
 					+ " recID integer PRIMARY KEY autoincrement, "
 					+ " MRank  text, "
 					+ " MCode  text, "
-					+ " MBullName  text, "
+					+ " MBullName  blob, "
 					+ " MBreed  text, "
-					+ " MIndex  text, "
+					+ " MBullIndex  text, "
 					+ " MRel1  text, "
 					+ " MStarsWithin  text, "
 					+ " MStarsAcross  text, "
@@ -905,7 +875,7 @@ public class login extends Activity {
 					+ " MRel3  text, "
 					+ " MDocility  text, "
 					+ " MRel4  text, "
-					+ " MCarcassWeightkgs  text, "
+					+ " MCarcassWeight  text, "
 					+ " MRel5  text, "
 					+ " MCarcassConf  text, "
 					+ " MRel6  text, "
@@ -919,10 +889,55 @@ public class login extends Activity {
 			db.setTransactionSuccessful();
 
 		} catch (SQLException e1) {
-
+			System.out.println(e1);
 		}
 		finally {
 			db.endTransaction();
+		}
+
+
+	}
+	private void insertDataM() {
+
+		db.beginTransaction();
+		try {
+
+			//insert rows
+			for(int i = 0; i < MRank.length;i++)
+			{
+				db.execSQL( "insert into BullsMaternal(MRank, MCode, MBullName, MBreed, MBullIndex, MRel1, MStarsWithin, MStarsAcross, MCalvDiff, MRel2, MGest, MRel3, MDocility, MRel4, MCarcassWeight, MRel4, MCarcassConf, MRel5, MAvail, MPrice, MSupplier) "
+						+ " values ('"+MRank[i]+
+						"' , '"+MCode[i]+
+						"' , '"+MBullName[i]+
+						"' , '"+MBreed[i]+
+						"' , '"+MIndex[i]+
+						"' , '"+MRel1[i]+
+						"' , '"+MStarsWithin[i]+
+						"' , '"+MStarsAcross[i]+
+						"' , '"+MCalvDiff[i]+
+						"' , '"+MRel2[i]+
+						"' , '"+MGest[i]+
+						"' , '"+MRel3[i]+
+						"' , '"+MDocility[i]+
+						"' , '"+MRel4[i]+
+						"' , '"+MCarcassWeightkgs[i]+
+						"' , '"+MRel5[i]+
+						"' , '"+MCarcassConf[i]+
+						"' , '"+MRel6[i]+
+						"' , '"+MAvail[i]+
+						"' , '"+MPrice[i]+
+						"' , '"+MSupplier[i]+"');" );
+			}
+
+			//commit your changes
+			db.setTransactionSuccessful();
+
+		}
+		catch (SQLiteException e2) {
+		}
+		finally {
+			db.endTransaction();
+			Toast.makeText(getBaseContext(), "DataBase Mat Done", Toast.LENGTH_LONG).show();
 		}
 
 
