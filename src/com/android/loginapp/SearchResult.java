@@ -1,28 +1,29 @@
 package com.android.loginapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.View;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import com.ofix.barcode.R;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
  * Created by Kev on 25/03/2016.
  */
 
-
 public class SearchResult extends Activity {
 
-//    public TextView textView2;
-//    public TextView textView4;
-//    public TextView textView5;
-//    public TextView textView6;
-//    public TextView textView7;
     String jumbo;
     String num;
     String sex;
@@ -67,19 +68,16 @@ public class SearchResult extends Activity {
     TextView textView3;
     TextView textView4;
     TextView textView5;
-    //TextView mTextView = (TextView) findViewById(R.id.textView2);
-//    TextView t2;
-//    TextView t4;
-//    TextView t5;
-//    TextView t6;
-//    TextView t7;
-   // public TextView textView22;
+    private RatingBar rb_small;
+    private static final Logger logger = Logger.getLogger("logger");
 
     public static final String MY_PREFS = "SharedPreferences";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.searchresult);
+
+        rb_small = (RatingBar)findViewById(R.id.ratingBar);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String barcode = preferences.getString("Cow", "");
@@ -95,9 +93,6 @@ public class SearchResult extends Activity {
             Cursor cur =  db.rawQuery("SELECT * FROM "+table+" WHERE jumbo="+barcode, null);
             cur.moveToFirst();
 
-//            while(cur.getColumnName(0).equalsIgnoreCase("name")){
-//                cur.moveToNext();
-//            }
             jumbo= cur.getString(1);
             num= cur.getString(2);
             sex= cur.getString(3);
@@ -146,8 +141,8 @@ public class SearchResult extends Activity {
                 jumbo+"\n"+
                 num+"\n"+
                 sex+"\n"+
-                dob+"\n65"+
-                name+"65\n"+
+                dob+"\n"+
+                name+"\n"+
                 status+"\n"+
                 breed+"\n"+
                 dam+"\n"+
@@ -181,14 +176,6 @@ public class SearchResult extends Activity {
                 daughter_calv_int+"\n"+
                 daughter_calv_int_rel+"\n"
         );
-        //mTextView.setText("Welcome to Dynamic TextView");
-        //t2.setText(jumbo);
-        //t4.setText(num  );
-        //t5.setText(sex  );
-        //t6.setText(dob  );
-        //t7.setText(name );
-
-       // textView22.setText(jumbo);
 
         textView1 = (TextView) findViewById(R.id.textView2);
         textView2 = (TextView) findViewById(R.id.textView4);
@@ -197,13 +184,23 @@ public class SearchResult extends Activity {
         textView5 = (TextView) findViewById(R.id.textView7);
 
 
-        //textView2.setTextSize(20);
         textView1.setText(jumbo);
         textView2.setText(num);
         textView3.setText(sex);
         textView4.setText(dam);
         textView5.setText(replaceStar);
+        int repStar;
 
+        repStar = Integer.parseInt(replaceStar);
+        rb_small.setRating(repStar);
 
+    }
+    public void bullList(View view) {
+        logger.log(Level.INFO, "button works!");
+
+        Intent intent = new Intent(SearchResult.this,BullSearch.class);
+        startActivity(intent);
+
+        Log.d("BullSearch", "button works!");
     }
 }

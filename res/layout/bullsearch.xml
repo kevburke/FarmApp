@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select"
+            android:id="@+id/radioButton"
+            android:checked="false"
+            android:layout_marginRight="50dp" android:layout_marginEnd="50dp"
+            android:layout_alignBottom="@+id/spinner" android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner" android:layout_alignParentTop="true" android:layout_toLeftOf="@+id/radioButton"
+            android:layout_toStartOf="@+id/radioButton"/>
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner2" android:layout_below="@+id/spinner" android:layout_alignRight="@+id/spinner"
+            android:layout_alignEnd="@+id/spinner"/>
+    <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select"
+            android:id="@+id/radioButton2" android:layout_alignBottom="@+id/spinner2"
+            android:layout_toRightOf="@+id/spinner2" android:layout_toEndOf="@+id/spinner2" android:checked="false"/>
+</RelativeLayout>

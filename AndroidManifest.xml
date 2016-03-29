@@ -123,6 +123,7 @@
                   android:label="@string/history_title"
                   android:stateNotNeeded="true"/>
         <activity android:name="com.android.loginapp.SearchResult" android:label="searchresult"/>
+        <activity android:name="com.android.loginapp.BullSearch" android:label="BullSearch"/>
     </application>
 
 </manifest>
