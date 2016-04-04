@@ -57,12 +57,13 @@ public class BullSearch extends Activity implements AdapterView.OnItemSelectedLi
         categories2.add("Breed");
         categories2.add("AUNGUS");
         categories2.add("AUBRAC");
-        categories2.add("BARZONA");
+        categories2.add("BLONDE D’AQUITANE");
         categories2.add("BELIGUM BLUE");
         categories2.add("CHAROLAIS");
         categories2.add("HEREFORD");
         categories2.add("LIMOUSIN");
         categories2.add("PARTHENAISE");
+        categories2.add("SALERS");
         categories2.add("SHORTHORN");
         categories2.add("SIMMENTAL");
         categories2.add("WAGYU");
@@ -153,11 +154,38 @@ public class BullSearch extends Activity implements AdapterView.OnItemSelectedLi
         //}
        // if(parent.getItemAtPosition(position).toString()=="Breed") {
             if (spinner.getId()==R.id.spinner2) {
-                if(S == "AUNGUS" || S == "AUBRAC" || S == "BARZONA"
+                if(S == "AUNGUS" || S == "AUBRAC" || S == "BLONDE D’AQUITANE"
                         || S == "BELIGUM BLUE" || S == "CHAROLAIS"|| S == "HEREFORD"
-                        || S == "LIMOUSIN"|| S == "PARTHENAISE"|| S == "AUNGUS"
+                        || S == "LIMOUSIN"|| S == "PARTHENAISE"|| S == "SALERS"
                         || S == "SHORTHORN"|| S == "SIMMENTAL"|| S == "WAGYU") {
-                    Breed = S;
+                    String myBreed =S;
+                    if(myBreed=="AUNGUS")
+                        Breed = "AA";
+                    if(myBreed=="AUBRAC")
+                        Breed = "AU";
+                    if(myBreed=="BLONDE D’AQUITANE")
+                        Breed = "BA";
+                    if(myBreed=="BELIGUM BLUE")
+                        Breed = "BB";
+                    if(myBreed=="CHAROLAIS")
+                        Breed = "CH";
+                    if(myBreed=="HEREFORD")
+                        Breed = "HE";
+                    if(myBreed=="LIMOUSIN")
+                        Breed = "LM";
+                    if(myBreed=="PARTHENAISE")
+                        Breed = "AA";
+                    if(myBreed=="SAILOR")
+                        Breed = "PT";
+                    if(myBreed=="SALERS")
+                        Breed = "SA";
+                    if(myBreed=="SHORTHORN")
+                        Breed = "SH";
+                    if(myBreed=="SIMMENTAL")
+                        Breed = "SI";
+                    if(myBreed=="WAGYU")
+                        Breed = "WA";
+
                 if (!(radioButton2.isChecked())) {
                     System.out.println("***************** Toggle 2**********************");
                     radioButton2.toggle();
@@ -188,7 +216,7 @@ public class BullSearch extends Activity implements AdapterView.OnItemSelectedLi
                     radioButton5.toggle();
             }
         }
-       
+
 
 //        if(Rating != "Ratings"){
 //            if (!(radioButton3.isChecked()))
