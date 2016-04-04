@@ -234,7 +234,7 @@ public class login extends Activity {
 
 	/**
 	 * This method handles the user login process.
-	 *
+	 * And runs Async task to send credentials to server for authentication on remote server
 	 * @param v
 	 */
 	private void LogMeIn(View v) {
@@ -575,17 +575,17 @@ public class login extends Activity {
 					TPrice[i] = JinTPrice.getString(i);
 					TSupplier[i] = JinTSupplier.getString(i);
 				}
-				System.out.println("Add Table IE1313426");
+
 				addDataBaseTable();
-				System.out.println("Add Table TBulls");
+				//System.out.println("Add Table TBulls");
 				addDataBaseTableT();
-				System.out.println("Add Table MBulls");
+				//System.out.println("Add Table MBulls");
 				addDataBaseTableM();
-				System.out.println("insertData IE1313426");
+				//System.out.println("insertData IE1313426");
 				insertData();
-				System.out.println("insertData TBulls");
+				//System.out.println("insertData TBulls");
 				insertDataT();
-				System.out.println("insertData MBulls");
+				//System.out.println("insertData MBulls");
 				insertDataM();
 
 			} catch (JSONException e) {
@@ -639,6 +639,11 @@ public class login extends Activity {
 			return s;
 		}
 	}
+
+	/**
+	 * Deals with inserting returned data from users herd
+	 */
+
 	private void insertData() {
 
 		db.beginTransaction();
@@ -701,6 +706,10 @@ public class login extends Activity {
 
 	}
 
+	/**
+	 * Deals with creating tables for herd of user
+	 */
+
 	private void addDataBaseTable() {
 
 		db.beginTransaction();
@@ -762,6 +771,10 @@ public class login extends Activity {
 
 
 	}
+
+	/**
+	 * Creates table for terminal bull list
+	 */
 	private void addDataBaseTableT() {
 
 		db.beginTransaction();
@@ -806,6 +819,10 @@ public class login extends Activity {
 
 
 	}
+	/**
+	 * Deals with inserting returned data from Terminal Bulls
+	 */
+
 	private void insertDataT() {
 
 		db.beginTransaction();
@@ -852,6 +869,10 @@ public class login extends Activity {
 
 	}
 
+	/**
+	 * Create table for Replacement Bulls
+	 */
+
 	private void addDataBaseTableM() {
 
 		db.beginTransaction();
@@ -897,6 +918,10 @@ public class login extends Activity {
 
 
 	}
+
+	/**
+	 * Deals with inserting returned data from Replacement Bulls
+	 */
 	private void insertDataM() {
 
 		db.beginTransaction();

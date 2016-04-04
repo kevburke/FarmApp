@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import com.ofix.barcode.R;
 
@@ -29,6 +31,8 @@ public class BullSelect extends Activity {
         details[3] = bundle.getString("4");         //CalvingRating
         details[4] = bundle.getString("5");         //Gestation
         TextView textView17 = (TextView) findViewById(R.id.textView17);
+        ListView listView = (ListView) findViewById(R.id.listView);
+        ArrayAdapter bullAdapter;
         textView17.setText("Filtered by: " + details[0] + "\n" + details[1] + "\n" + details[2] + "\n" + details[3] + "\n" +
                 details[4]);
 
