@@ -22,11 +22,11 @@ public class BullSearch extends Activity implements AdapterView.OnItemSelectedLi
     private RadioButton radioButton3;
     private RadioButton radioButton4;
     private RadioButton radioButton5;
-    private String Type = "*";
-    private String Breed ="*";
-    private String Ratings ="*";
-    private String CalvingRating ="*";
-    private String Gestation ="*";
+    private String Type = "ANY";
+    private String Breed ="ANY";
+    private String Ratings ="ANY";
+    private String CalvingRating ="ANY";
+    private String Gestation ="ANY";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

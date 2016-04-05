@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2008 ZXing authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.zxing.client.android;
 
 import android.app.Activity;
@@ -17,18 +33,16 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;
 import com.google.zxing.client.android.camera.CameraManager;
-import com.google.zxing.client.android.history.HistoryItem;
-import com.google.zxing.client.android.history.HistoryManager;
-import com.ofix.barcode.ProductData;
+//import com.google.zxing.client.android.history.HistoryItem;
+//import com.google.zxing.client.android.history.HistoryManager;
+//import com.ofix.barcode.ProductData;
 import com.ofix.barcode.R;
-import com.ofix.barcode.ResultActivity;
-import com.ofix.barcode.RetrieveProductTask;
+import com.android.loginapp.ResultActivity;
+//import com.ofix.barcode.RetrieveProductTask;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
-
-//import com.ofix.barcode.RetrieveProductTask;
 
 /**
  * This activity opens the camera and does the actual scanning on a background thread. It draws a
@@ -62,7 +76,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   private Collection<BarcodeFormat> decodeFormats;
   private Map<DecodeHintType,?> decodeHints;
   private String characterSet;
-  private HistoryManager historyManager;
+  //private HistoryManager historyManager;
   private InactivityTimer inactivityTimer;
   private AmbientLightManager ambientLightManager;
 
@@ -87,8 +101,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     setContentView(R.layout.capture);
 
     hasSurface = false;
-    historyManager = new HistoryManager(this);
-    historyManager.trimHistory();
+    //historyManager = new HistoryManager(this);
+    //historyManager.trimHistory();
     inactivityTimer = new InactivityTimer(this);
     ambientLightManager = new AmbientLightManager(this);
 
@@ -284,8 +298,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
       if (requestCode == HISTORY_REQUEST_CODE) {
         int itemNumber = intent.getIntExtra(Intents.History.ITEM_NUMBER, -1);
         if (itemNumber >= 0) {
-          HistoryItem historyItem = historyManager.buildHistoryItem(itemNumber);
-          decodeOrStoreSavedBitmap(null, historyItem.getResult());
+          //HistoryItem historyItem = historyManager.buildHistoryItem(itemNumber);
+          //decodeOrStoreSavedBitmap(null, historyItem.getResult());
         }
       }
     }
@@ -338,8 +352,12 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   public void handleDecode(Result rawResult, Bitmap barcode, float scaleFactor) {
     inactivityTimer.onActivity();
     String barcodeId = rawResult.getText();
-    Log.i("ofix","barcode id "+barcodeId);
-    new RetrieveProductTask(this).execute(rawResult.getText());
+
+    Intent intent = new Intent(this, ResultActivity.class);
+
+    intent.putExtra(CaptureActivity.BARCODE_ID, String.valueOf(barcodeId));
+    startActivity(intent);
+
   }
 
   private void initCamera(SurfaceHolder surfaceHolder) {
@@ -396,10 +414,5 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     viewfinderView.drawViewfinder();
   }
 
-  public void productFound(ProductData product){
-    Intent intent = new Intent(this, ResultActivity.class);
-    //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    intent.putExtra(CaptureActivity.BARCODE_ID, String.valueOf(product.id));
-    startActivity(intent);
-  }
+
 }

@@ -1,4 +1,4 @@
-package com.ofix.barcode;
+package com.android.loginapp;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.TextView;
-import com.android.loginapp.SearchResult;
 import com.google.zxing.client.android.CaptureActivity;
 
 public class ResultActivity extends Activity {

@@ -11,12 +11,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.ofix.barcode.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Kev on 04/04/2016.
  */
 public class BullSelect extends Activity {
     SQLiteDatabase db;
     TextView textView17;
+    List<String> TBullName = new ArrayList<String>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,24 +42,38 @@ public class BullSelect extends Activity {
 
         String path = "ICBF";
         db = this.openOrCreateDatabase(path, MODE_PRIVATE, null);
-        SQLiteDatabase db = this.openOrCreateDatabase("ICBF", MODE_PRIVATE, null);
 
+
+        System.out.println("at the query *********");
         db.beginTransaction();
         if (details[0] == "Terminal") {
             try {
-                Cursor cur = db.rawQuery("SELECT * FROM " + details[0] + " WHERE Tbreed=" + details[1] +" AND "+ "TStarsWithin="+ details[2],null);
+                Cursor cur = db.rawQuery("SELECT TBullName FROM BullsTerminal WHERE Tbreed='" + details[1] +"' AND "+ "TStarsWithin='"+ details[2]+".0';",null,null);
                 cur.moveToFirst();
+
+
+                    TBullName.add(cur.getString(1));
+
+
                 db.setTransactionSuccessful();
 
 
             } catch (SQLException e) {
-                //salary.setText("nope");
+                e.printStackTrace();
+                System.out.println(e);
             } finally {
                 db.endTransaction();
+                System.out.println("************"+"DOME"+"************");
             }
-        } else if (details[0] == " Replacement") {
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                    this,
+                    android.R.layout.simple_list_item_1,
+                    TBullName );
+
+            listView.setAdapter(arrayAdapter);
+        } else if (details[0] == "Replacement") {
             try {
-                Cursor cur = db.rawQuery("SELECT * FROM " + details[0] + " WHERE Mbreed=" +details[1]+ " AND "+ "MStarsWithin"+ details[2], null);
+                Cursor cur = db.rawQuery("SELECT * FROM BullsMaternal WHERE Mbreed=" +details[1]+ " AND "+ "MStarsWithin"+ details[2], null);
                 cur.moveToFirst();
                 db.setTransactionSuccessful();
 
@@ -69,4 +87,5 @@ public class BullSelect extends Activity {
 
 
     }
+
 }

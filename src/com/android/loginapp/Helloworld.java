@@ -4,16 +4,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import com.ofix.barcode.MainActivity;
+import com.google.zxing.client.android.CaptureActivity;
 import com.ofix.barcode.R;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+//import com.ofix.barcode.MainActivity;
 
 /***
  * Main layout page .
@@ -36,14 +38,27 @@ public class Helloworld extends Activity {
     }
 
 
+
+
+    public void openCapture() {
+        Intent intent = new Intent(this, CaptureActivity.class);
+        startActivity(intent);
+        finish();
+    }
     public void scanNow(View view) {
         logger.log(Level.INFO, "button works!");
         //Intent intent = new Intent("com.ofix.barcode.MainActivity");
-        Intent intent = new Intent(Helloworld.this,MainActivity.class);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                openCapture();
+            }
+        }, 2000);
+        /*Intent intent = new Intent(Helloworld.this,MainActivity.class);
         startActivity(intent);
         //intent.putExtra("com.google.zxing.client.android.SCAN.SCAN_MODE","");
        // startActivityForResult(intent, 0);
-        Log.d("test", "button works!");
+        Log.d("test", "button works!");*/
     }
     public void search(View view){
         mEdit   = (EditText)findViewById(R.id.editText2);
@@ -53,7 +68,8 @@ public class Helloworld extends Activity {
         editor.putString("Cow",jum);
         editor.apply();
         logger.log(Level.INFO, "Search button works");
-
+        Intent intent = new Intent(this, SearchResult.class);
+        startActivity(intent);
     }
 //    @Override
 //    public void onActivityResult(int requestCode, int resultCode, Intent data){
