@@ -150,6 +150,9 @@ public class BullSearch extends Activity implements AdapterView.OnItemSelectedLi
                         radioButton.toggle();
                     }
                 }
+                else if(S=="Type"){
+                    radioButton.setChecked(false);
+                }
             }
         //}
        // if(parent.getItemAtPosition(position).toString()=="Breed") {

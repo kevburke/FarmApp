@@ -1,20 +1,18 @@
 package com.ofix.barcode;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
+import android.os.AsyncTask;
+import com.google.zxing.client.android.CaptureActivity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-import com.google.zxing.client.android.CaptureActivity;
-
-import android.os.AsyncTask;
-
+//public class RetrieveProductTask{
 public class RetrieveProductTask extends AsyncTask<String, Void, ProductData> {
 
     private CaptureActivity delegate;
@@ -25,7 +23,7 @@ public class RetrieveProductTask extends AsyncTask<String, Void, ProductData> {
 
     @Override
     protected ProductData doInBackground(String... arg0) {
-        // Create a new HttpClient and Post Header
+        //Create a new HttpClient and Header
         HttpClient httpclient = new DefaultHttpClient();
         HttpGet httpget = new HttpGet("http://journeyplanner.herokuapp.com/dummy?id=" + arg0[0]);
         ProductData result = null;
@@ -41,6 +39,7 @@ public class RetrieveProductTask extends AsyncTask<String, Void, ProductData> {
         }
 
         return result;
+        //return arg0[0];
     }
 
     @Override

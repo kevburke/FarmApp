@@ -2,9 +2,12 @@ package com.android.loginapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import com.ofix.barcode.MainActivity;
 import com.ofix.barcode.R;
@@ -21,6 +24,7 @@ public class Helloworld extends Activity {
     private static final Logger logger = Logger.getLogger("logger");
 
     public TextView textView;
+    public EditText mEdit;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +46,12 @@ public class Helloworld extends Activity {
         Log.d("test", "button works!");
     }
     public void search(View view){
+        mEdit   = (EditText)findViewById(R.id.editText2);
+        String jum = mEdit.getText().toString();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("Cow",jum);
+        editor.apply();
         logger.log(Level.INFO, "Search button works");
 
     }

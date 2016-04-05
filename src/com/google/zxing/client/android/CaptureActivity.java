@@ -1,26 +1,9 @@
-/*
- * Copyright (C) 2008 ZXing authors
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.google.zxing.client.android;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -45,6 +28,8 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
 
+//import com.ofix.barcode.RetrieveProductTask;
+
 /**
  * This activity opens the camera and does the actual scanning on a background thread. It draws a
  * viewfinder to help the user place the barcode correctly, shows feedback as the image processing
@@ -54,7 +39,7 @@ import java.util.Map;
  * @author Sean Owen
  */
 public final class CaptureActivity extends Activity implements SurfaceHolder.Callback {
-	
+
   public final static String BARCODE_ID = "com.ofix.barcode.barcodeId";
 
   private static final String TAG = CaptureActivity.class.getSimpleName();
@@ -180,15 +165,15 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
             cameraManager.setManualCameraId(cameraId);
           }
         }
-        
+
         String customPromptMessage = intent.getStringExtra(Intents.Scan.PROMPT_MESSAGE);
         if (customPromptMessage != null) {
           statusView.setText(customPromptMessage);
         }
 
       } else if (dataString != null &&
-                 dataString.contains("http://www.google") &&
-                 dataString.contains("/m/products/scan")) {
+              dataString.contains("http://www.google") &&
+              dataString.contains("/m/products/scan")) {
 
         // Scan only products and send the result to mobile Product Search.
         source = IntentSource.PRODUCT_SEARCH_LINK;
@@ -228,7 +213,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     } else setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     return ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;*/
   }
-  
+
   private static boolean isZXingURL(String dataString) {
     if (dataString == null) {
       return false;
@@ -410,11 +395,11 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   public void drawViewfinder() {
     viewfinderView.drawViewfinder();
   }
-  
-  public void productFound(ProductData product){    
-	Intent intent = new Intent(this, ResultActivity.class);	
-	//intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-	intent.putExtra(CaptureActivity.BARCODE_ID, String.valueOf(product.id));
+
+  public void productFound(ProductData product){
+    Intent intent = new Intent(this, ResultActivity.class);
+    //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    intent.putExtra(CaptureActivity.BARCODE_ID, String.valueOf(product.id));
     startActivity(intent);
   }
 }

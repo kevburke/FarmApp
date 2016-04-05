@@ -81,6 +81,7 @@ public class SearchResult extends Activity {
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String barcode = preferences.getString("Cow", "");
+        System.out.println("***********************"+barcode+"************************************");
         SharedPreferences prefs = getSharedPreferences(MY_PREFS, 0);
         String table = prefs.getString("username", "");
         String path = "ICBF";
