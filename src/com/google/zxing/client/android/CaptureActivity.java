@@ -53,7 +53,7 @@ import java.util.Map;
  * @author Sean Owen
  */
 public final class CaptureActivity extends Activity implements SurfaceHolder.Callback {
-
+	
   public final static String BARCODE_ID = "com.ofix.barcode.barcodeId";
 
   private static final String TAG = CaptureActivity.class.getSimpleName();
@@ -179,15 +179,15 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
             cameraManager.setManualCameraId(cameraId);
           }
         }
-
+        
         String customPromptMessage = intent.getStringExtra(Intents.Scan.PROMPT_MESSAGE);
         if (customPromptMessage != null) {
           statusView.setText(customPromptMessage);
         }
 
       } else if (dataString != null &&
-              dataString.contains("http://www.google") &&
-              dataString.contains("/m/products/scan")) {
+                 dataString.contains("http://www.google") &&
+                 dataString.contains("/m/products/scan")) {
 
         // Scan only products and send the result to mobile Product Search.
         source = IntentSource.PRODUCT_SEARCH_LINK;
@@ -227,7 +227,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     } else setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     return ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;*/
   }
-
+  
   private static boolean isZXingURL(String dataString) {
     if (dataString == null) {
       return false;
@@ -413,6 +413,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   public void drawViewfinder() {
     viewfinderView.drawViewfinder();
   }
-
+  
 
 }

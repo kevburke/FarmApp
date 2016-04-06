@@ -37,9 +37,6 @@ public class Helloworld extends Activity {
 
     }
 
-
-
-
     public void openCapture() {
         Intent intent = new Intent(this, CaptureActivity.class);
         startActivity(intent);
@@ -54,11 +51,7 @@ public class Helloworld extends Activity {
                 openCapture();
             }
         }, 2000);
-        /*Intent intent = new Intent(Helloworld.this,MainActivity.class);
-        startActivity(intent);
-        //intent.putExtra("com.google.zxing.client.android.SCAN.SCAN_MODE","");
-       // startActivityForResult(intent, 0);
-        Log.d("test", "button works!");*/
+
     }
     public void search(View view){
         mEdit   = (EditText)findViewById(R.id.editText2);
@@ -68,16 +61,8 @@ public class Helloworld extends Activity {
         editor.putString("Cow",jum);
         editor.apply();
         logger.log(Level.INFO, "Search button works");
-        Intent intent = new Intent(this, SearchResult.class);
-        startActivity(intent);
+
     }
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data){
-//        super.onActivityResult(requestCode,resultCode,data);
-//        if (resultCode == Activity.RESULT_OK) if (requestCode == 101) {
-//
-//        }
-//    }
 }
 
 
